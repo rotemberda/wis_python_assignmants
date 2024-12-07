@@ -1,4 +1,4 @@
-from seq import validate_input, read_file, analyze_seq, print_result
+from seq import validate_input, read_file, analyze_seq
 import pytest 
 
 def test_validate_input():
