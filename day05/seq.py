@@ -39,8 +39,8 @@ def validate_input(argv):
     if len(argv) < 2:
         exit("Usage: python seq.py filepath1.txt filepath2.txt")
 
-    # check that all files are .txt files
     for path in argv[1:]:
+        # check that all files are .txt files
         if path[-4:] != '.txt':
             exit(f"Usage: '{path}' is not a .txt file")
     
@@ -75,7 +75,7 @@ def analyze_seq(seq):
         result[nuc] = count
         nuc_num += count
 
-    # adding to result any unknown charactors
+    # adding to result any unknown characters
     result["Unknown"] = len(seq) - nuc_num
     result["Total"] = len(seq)
 
@@ -84,11 +84,15 @@ def analyze_seq(seq):
 
 
 def print_result(result):
+    # printing the results of each nucleotide and unknown characters
     for nuc, count in result.items():
+        # ignoring the total result to print it at the end
         if nuc == "Total":
             continue
+            
         print(f"{nuc}:{' ' * (8 - len(nuc))} {count} {round(count / result["Total"] * 100, 1)}%")
-    
+
+    # printing the total results
     print(f"Total:{' ' * 3} {result["Total"]}\n\n")
 
 
