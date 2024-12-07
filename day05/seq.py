@@ -56,6 +56,7 @@ def read_file(path):
     # read the file and return the sequence
     with open(path, 'r') as file:
         seq = file.read()
+    # returning the sequence without '\n' at the end
     return seq[:-1]
 
 
