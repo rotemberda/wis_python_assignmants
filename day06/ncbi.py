@@ -43,15 +43,23 @@ def search_ncbi(database, term, number):
 def fetch_file_names(ids, database, term):
     # fetching the file names and returning in a list
 
+    # if file path doesn't exist, create new one
+    folder_name = "result_files"
+    os.makedirs(folder_name, exist_ok=True)
+
     file_names = []
     for id in ids:
         try:
             handle = Entrez.efetch(db=database, id=id, rettype="fasta", retmode="text")
             file_name = f"{database}_{term}_{id}.fasta"
+            file_path = os.path.join(folder_name, file_name)
+
             # writing the results to a file named 'database_term_id.fasta'
-            with open(file_name, "w") as file:
+            with open(file_path, "w") as file:
                 file.write(handle.read())
-            file_names.append(file_name)
+            # add the file name to the list
+            file_names.append(file_path)
+
         except HTTPError as e:
             # handles with errors
             print(f"Error fetching ID {id}: {e}")
