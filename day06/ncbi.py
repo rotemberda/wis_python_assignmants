@@ -75,10 +75,15 @@ def log_result_to_csv(database, term, number, total_items):
     date_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_data = [date_time, term, database, number, total_items]
     
+    if not os.path.isfile(log_file):
+        file_exist = False
+    else:
+        file_exist = True
+
     with open(log_file, mode="a", newline="") as csvfile:
         writer = csv.writer(csvfile)
         # if file doesn't exist, creating new one with columns names, then adding the search log
-        if not os.path.isfile(log_file):
+        if not file_exist:
             writer.writerow(["date", "term", "database", "max", "total"])
         writer.writerow(log_data)
 

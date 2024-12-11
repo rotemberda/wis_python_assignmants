@@ -1,10 +1,4 @@
-2024-12-09 19:44:42,Orchid,genome,3,3
-2024-12-09 19:46:07,cauliflower,nucleotide,10,30414
-2024-12-09 19:50:46,Orchid,genome,3,3
-2024-12-09 20:29:07,BRCA1,nucleotide,2,49195
-2024-12-09 20:29:40,Orchid,nucleotide,3,547106
-2024-12-09 20:31:19,cauliflower,nucleotide,10,30414
-2024-12-09 20:47:35,Orchid,gene,3,13987
-2024-12-09 21:03:07,Orchid,nucleotide,3,547106
-2024-12-09 21:03:28,Orchid,gene,3,13987
-2024-12-09 21:03:47,BRCA1,nucleotide,5,49195
+date,term,database,max,total
+2024-12-11 12:06:17,Orchid,nucleotide,3,547106
+2024-12-11 12:10:50,Orchid,gene,3,13987
+2024-12-11 12:13:04,cauliflower,nucleotide,5,30391
